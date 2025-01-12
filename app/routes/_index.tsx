@@ -8,7 +8,10 @@ import { RightSidebar } from "~/components/RightSidebar";
 export const meta: MetaFunction = () => {
   return [
     { title: "Lunar Rover Control Interface" },
-    { name: "description", content: "Mission control interface for lunar rover operations" },
+    {
+      name: "description",
+      content: "Mission control interface for lunar rover operations",
+    },
   ];
 };
 
@@ -36,42 +39,42 @@ const mockTelemetry = {
       oxygenTank: 93,
       bloodPressure: 91,
       temperature: 100,
-    }
+    },
   },
   environmentalReadings: {
     temperature: 84,
     rain: 0,
     humidity: 2,
     visibility: 12,
-    windSpeed: 3
+    windSpeed: 3,
   },
   samples: [
-  {
-    id: "08123",
-    properties: ["Fine-grained", "low silica", "glassy"]
-  },
-  {
-    id: "32412",
-      properties: ["Coarse-grained", "high silica"]
-    }
-  ]
+    {
+      id: "08123",
+      properties: ["Fine-grained", "low silica", "glassy"],
+    },
+    {
+      id: "32412",
+      properties: ["Coarse-grained", "high silica"],
+    },
+  ],
 };
 
 export default function Index() {
   const [viewMode, setViewMode] = useState<"single" | "grid">("single");
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100">
+    <div className="min-h-screen bg-[#131617] text-gray-100">
       <StatusBar environmentalReadings={mockTelemetry.environmentalReadings} />
-      
+
       <div className="grid grid-cols-[300px_1fr_300px] gap-4 p-4">
-        <LeftSidebar 
+        <LeftSidebar
           rover={mockTelemetry.rover}
           crew={mockTelemetry.crew}
           samples={mockTelemetry.samples}
         />
-        
-        <MainViewport 
+
+        <MainViewport
           connection={mockTelemetry.connection}
           currentTime={mockTelemetry.currentTime}
           elapsedTime={mockTelemetry.elapsedTime}
@@ -79,7 +82,7 @@ export default function Index() {
           viewMode={viewMode}
           onViewModeChange={setViewMode}
         />
-        
+
         <RightSidebar />
       </div>
     </div>

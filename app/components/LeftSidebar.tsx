@@ -17,11 +17,11 @@ type ScienceSample = {
   properties: string[];
 };
 
-export function LeftSidebar({ 
+export function LeftSidebar({
   rover,
   crew,
-  samples
-}: { 
+  samples,
+}: {
   rover: RoverStats;
   crew: {
     ev1: CrewMember;
@@ -31,7 +31,7 @@ export function LeftSidebar({
 }) {
   return (
     <div className="space-y-4">
-      <div className="bg-gray-800 p-4 rounded-lg">
+      <div className="bg-[#2d2a2b] border border-gray-700 p-4 rounded-lg">
         <h2 className="font-bold mb-4">LTV</h2>
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
@@ -55,7 +55,7 @@ export function LeftSidebar({
         </div>
       </div>
 
-      <div className="bg-gray-800 p-4 rounded-lg">
+      <div className="bg-[#2d2a2b] border border-gray-700 p-4 rounded-lg">
         <h2 className="font-bold mb-4">Crew</h2>
         <div className="space-y-4">
           <CrewStatus label="EV1" stats={crew.ev1} />
@@ -63,11 +63,11 @@ export function LeftSidebar({
         </div>
       </div>
 
-      <div className="bg-gray-800 p-4 rounded-lg">
+      <div className="bg-[#2d2a2b] border border-gray-700 p-4 rounded-lg">
         <h2 className="font-bold mb-4">Science</h2>
         <div className="space-y-2">
           {samples.map((sample) => (
-            <div 
+            <div
               key={sample.id}
               className="p-3 bg-gray-700 rounded flex items-center space-x-3"
             >
@@ -75,7 +75,7 @@ export function LeftSidebar({
               <div>
                 <div className="font-medium">Sample {sample.id}</div>
                 <div className="text-sm text-gray-400">
-                  {sample.properties.join(', ')}
+                  {sample.properties.join(", ")}
                 </div>
               </div>
             </div>
@@ -88,7 +88,7 @@ export function LeftSidebar({
 
 function CrewStatus({ label, stats }: { label: string; stats: CrewMember }) {
   return (
-    <div className="p-3 bg-gray-700 rounded">
+    <div className="p-3 rounded">
       <div className="flex justify-between items-center">
         <span>{label}</span>
         <span className="text-green-400">Nominal</span>
@@ -105,4 +105,4 @@ function CrewStatus({ label, stats }: { label: string; stats: CrewMember }) {
       </div>
     </div>
   );
-} 
+}

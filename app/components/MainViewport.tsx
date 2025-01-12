@@ -17,22 +17,26 @@ export function MainViewport({
 }) {
   return (
     <div className="space-y-4">
-      <div className="bg-gray-800 p-4 rounded-lg">
+      <div className="bg-[#2d2a2b] border border-gray-700 p-4 rounded-lg">
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center gap-4">
             <span>Connection: </span>
             <span className="text-green-400">{connection}</span>
           </div>
           <div className="flex gap-4">
-            <button 
-              className={`px-3 py-1 rounded ${viewMode === 'single' ? 'bg-blue-500' : 'bg-gray-700'}`}
-              onClick={() => onViewModeChange('single')}
+            <button
+              className={`px-3 py-1 rounded ${
+                viewMode === "single" ? "bg-blue-500" : "bg-gray-700"
+              }`}
+              onClick={() => onViewModeChange("single")}
             >
               Single view
             </button>
-            <button 
-              className={`px-3 py-1 rounded ${viewMode === 'grid' ? 'bg-blue-500' : 'bg-gray-700'}`}
-              onClick={() => onViewModeChange('grid')}
+            <button
+              className={`px-3 py-1 rounded ${
+                viewMode === "grid" ? "bg-blue-500" : "bg-gray-700"
+              }`}
+              onClick={() => onViewModeChange("grid")}
             >
               Grid view
             </button>
@@ -67,11 +71,18 @@ function CameraFeed() {
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-gray-600">Camera feed placeholder</div>
       </div>
-      
+
       <div className="absolute bottom-4 left-4 bg-gray-800/80 p-2 rounded-full">
         <svg viewBox="0 0 100 100" className="w-20 h-20">
-          <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="2"/>
-          <polygon points="50,20 45,35 55,35" fill="currentColor"/>
+          <circle
+            cx="50"
+            cy="50"
+            r="45"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <polygon points="50,20 45,35 55,35" fill="currentColor" />
         </svg>
       </div>
     </div>
@@ -81,10 +92,14 @@ function CameraFeed() {
 function ControlPanel() {
   return (
     <div className="mt-4 flex gap-4">
-      <button className="px-4 py-2 bg-red-600 rounded-lg">Abort commands</button>
-      <button className="px-4 py-2 bg-gray-700 rounded-lg">Turn on radio</button>
+      <button className="px-4 py-2 bg-red-600 rounded-lg">
+        Abort commands
+      </button>
+      <button className="px-4 py-2 bg-gray-700 rounded-lg">
+        Turn on radio
+      </button>
       <button className="px-4 py-2 bg-gray-700 rounded-lg">Navigation</button>
       <button className="px-4 py-2 bg-gray-700 rounded-lg">Adjust speed</button>
     </div>
   );
-} 
+}
