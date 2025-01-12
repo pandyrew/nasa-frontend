@@ -32,24 +32,24 @@ export function LeftSidebar({
   return (
     <div className="space-y-3">
       <div className="bg-[#2d2a2b] border border-gray-700 p-4 rounded-lg">
-        <h2 className="font-bold ">LTV</h2>
+        <h2 className="font-bold text-sm">LTV</h2>
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div>
               <div className="text-sm text-gray-400">Heading</div>
-              <div className="text-xl">{rover.heading}°</div>
+              <div className="text-lg">{rover.heading}°</div>
             </div>
             <div>
               <div className="text-sm text-gray-400">Speed</div>
-              <div className="text-xl">{rover.speed} km/h</div>
+              <div className="text-lg">{rover.speed} km/h</div>
             </div>
             <div>
               <div className="text-sm text-gray-400">Battery</div>
-              <div className="text-xl">{rover.battery}%</div>
+              <div className="text-lg">{rover.battery}%</div>
             </div>
             <div>
               <div className="text-sm text-gray-400">Temperature</div>
-              <div className="text-xl">{rover.temperature}°F</div>
+              <div className="text-lg">{rover.temperature}°F</div>
             </div>
           </div>
         </div>
@@ -128,9 +128,7 @@ function CrewStatus({ label, stats }: { label: string; stats: CrewMember }) {
                   <div
                     key={i}
                     className={`w-2 h-4 ${
-                      i <= (stats.oxygenTank / 20)
-                        ? "bg-cyan-400"
-                        : "bg-gray-600"
+                      i <= stats.oxygenTank / 20 ? "bg-cyan-400" : "bg-gray-600"
                     }`}
                   />
                 ))}

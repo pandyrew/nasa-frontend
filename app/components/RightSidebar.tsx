@@ -35,13 +35,13 @@ export function RightSidebar() {
 
   return (
     <div className="bg-[#2d2a2b] border border-gray-700 p-4 rounded-lg h-fit">
-      <h2 className="font-bold mb-4">Connect UIA to DCU</h2>
+      <h2 className="font-bold mb-4 text-sm">Connect UIA to DCU</h2>
       <div className="space-y-4">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center text-sm">
           <span className="text-gray-400">ETA</span>
           <span>3:34 min</span>
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center text-sm">
           <span className="text-gray-400">Risk</span>
           <span>Medium</span>
         </div>
@@ -58,7 +58,7 @@ export function RightSidebar() {
         </div>
       </div>
 
-      <button className="w-full mt-6 bg-cyan-500 hover:bg-cyan-600 text-white py-2 px-4 rounded">
+      <button className="w-full mt-6 bg-cyan-500 hover:bg-cyan-600 text-white py-2 px-4 rounded text-sm">
         Send commands
       </button>
     </div>

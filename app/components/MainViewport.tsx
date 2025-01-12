@@ -53,15 +53,15 @@ function MissionStatus({
   onViewModeChange: (mode: ViewMode) => void;
 }) {
   return (
-    <div className="p-4 border-b border-gray-700">
+    <div className="p-2 px-4 border-b border-gray-700">
       <div className="flex justify-between items-center mb-2">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-sm">
           <span>Connection:</span>
           <span className="text-green-400 bg-green-400/10 px-2 py-0.5 rounded">
             {connection}
           </span>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 text-sm">
           <button
             className="flex items-center gap-1 px-3 py-1 rounded hover:bg-gray-700"
             onClick={() => onViewModeChange("single")}
@@ -77,7 +77,7 @@ function MissionStatus({
         </div>
       </div>
 
-      <div className="grid grid-cols-3 text-center">
+      <div className="grid grid-cols-3 text-center text-sm">
         <div>
           <div className="text-gray-400">Current time</div>
           <div className="text-3xl">{currentTime}</div>
@@ -173,16 +173,16 @@ function ManualControl() {
     <div className="p-4">
       <div className="text-sm text-gray-400 mb-2">Manual control</div>
       <div className="flex gap-2">
-        <button className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">
+        <button className="text-sm px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">
           ⚠ Abort commands
         </button>
-        <button className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 flex items-center gap-2">
+        <button className="text-sm px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 flex items-center gap-2">
           <img src={radio} alt="Radio" className="w-4 h-4" /> Turn on radio
         </button>
-        <button className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 flex items-center gap-2">
+        <button className="text-sm px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 flex items-center gap-2">
           <img src={nav} alt="Navigation" className="w-4 h-4" /> Navigation
         </button>
-        <button className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 flex items-center gap-2">
+        <button className="text-sm px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 flex items-center gap-2">
           <img src={speed} alt="Speed" className="w-4 h-4" /> Adjust speed
         </button>
       </div>
