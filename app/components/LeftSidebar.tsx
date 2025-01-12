@@ -89,20 +89,101 @@ export function LeftSidebar({
 function CrewStatus({ label, stats }: { label: string; stats: CrewMember }) {
   return (
     <div className="p-3 rounded">
-      <div className="flex justify-between items-center">
-        <span>{label}</span>
-        <span className="text-green-400">Nominal</span>
-      </div>
-      <div className="mt-2 space-y-2">
-        <div className="flex justify-between">
-          <span className="text-gray-400">Heart rate</span>
-          <span>{stats.heartRate} BPM</span>
+      <div className="flex justify-between items-center mb-3">
+        <div className="flex items-center gap-2">
+          <span className="text-cyan-300">👤</span>
+          <span className="font-medium">{label}</span>
         </div>
-        <div className="flex justify-between">
-          <span className="text-gray-400">Oxygen</span>
-          <span>{stats.oxygenTank}%</span>
+        <div className="flex items-center gap-2">
+          <span className="text-green-400 text-sm">Nominal</span>
+          <button className="text-gray-400 hover:text-white">
+            {label === "EV1" ? "▼" : "▶"}
+          </button>
         </div>
       </div>
+
+      {label === "EV1" ? (
+        <div className="space-y-4">
+          <div className="flex justify-between items-center">
+            <span className="text-gray-400">Heart rate</span>
+            <div className="flex items-center gap-2">
+              <span>{stats.heartRate} BPM</span>
+              <svg className="w-20 h-6" viewBox="0 0 100 24">
+                <path
+                  d="M 0,12 L 10,12 L 20,4 L 30,20 L 40,12 L 50,12"
+                  stroke="rgb(34, 211, 238)"
+                  strokeWidth="1.5"
+                  fill="none"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div className="flex justify-between items-center">
+            <span className="text-gray-400">Oxygen tank</span>
+            <div className="flex items-center gap-2">
+              <span>{stats.oxygenTank}%</span>
+              <div className="flex gap-0.5">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div
+                    key={i}
+                    className={`w-2 h-4 ${
+                      i <= (stats.oxygenTank / 20)
+                        ? "bg-cyan-400"
+                        : "bg-gray-600"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <div className="text-gray-400 text-sm">Blood pressure</div>
+              <div>{stats.bloodPressure} spO2</div>
+            </div>
+            <div>
+              <div className="text-gray-400 text-sm">Temperature</div>
+              <div>{stats.temperature}°F</div>
+            </div>
+          </div>
+
+          <div className="relative aspect-video bg-gray-900 rounded overflow-hidden">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-gray-600">Camera Feed</span>
+            </div>
+            <div className="absolute bottom-2 right-2 flex gap-2">
+              <div className="w-6 h-6 rounded-full bg-gray-800 flex items-center justify-center">
+                <span className="text-gray-400 text-xs">1</span>
+              </div>
+              <div className="w-6 h-6 rounded-full bg-gray-800 flex items-center justify-center">
+                <span className="text-gray-400 text-xs">2</span>
+              </div>
+              <div className="w-6 h-6 rounded-full bg-gray-800 flex items-center justify-center">
+                <span className="text-gray-400 text-xs">3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-1">
+              <span className="text-cyan-400">O₂</span>
+              <span>{stats.oxygenTank}%</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="text-cyan-400">♡</span>
+              <span>{stats.heartRate} BPM</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="text-cyan-400">🌡️</span>
+              <span>{stats.temperature}°F</span>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
