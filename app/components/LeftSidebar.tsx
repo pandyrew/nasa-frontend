@@ -32,7 +32,7 @@ export function LeftSidebar({
   return (
     <div className="space-y-3">
       <div className="bg-[#2d2a2b] border border-gray-700 p-4 rounded-lg">
-        <h2 className="font-bold mb-4">LTV</h2>
+        <h2 className="font-bold ">LTV</h2>
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div>
@@ -56,7 +56,7 @@ export function LeftSidebar({
       </div>
 
       <div className="bg-[#2d2a2b] border border-gray-700 p-4 rounded-lg">
-        <h2 className="font-bold mb-4">Crew</h2>
+        <h2 className="font-bold">Crew</h2>
         <div className="space-y-4">
           <CrewStatus label="EV1" stats={crew.ev1} />
           <CrewStatus label="EV2" stats={crew.ev2} />
@@ -64,7 +64,7 @@ export function LeftSidebar({
       </div>
 
       <div className="bg-[#2d2a2b] border border-gray-700 p-4 rounded-lg">
-        <h2 className="font-bold mb-4">Science</h2>
+        <h2 className="font-bold mb-2">Science</h2>
         <div className="space-y-2">
           {samples.map((sample) => (
             <div
@@ -88,7 +88,7 @@ export function LeftSidebar({
 
 function CrewStatus({ label, stats }: { label: string; stats: CrewMember }) {
   return (
-    <div className="p-3 rounded">
+    <div className="">
       <div className="flex justify-between items-center mb-3">
         <div className="flex items-center gap-2">
           <span className="text-cyan-300">👤</span>

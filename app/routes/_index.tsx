@@ -67,7 +67,7 @@ export default function Index() {
     <div className="min-h-screen bg-[#131617] text-gray-100">
       <StatusBar environmentalReadings={mockTelemetry.environmentalReadings} />
 
-      <div className="grid grid-cols-[250px_1fr_220px] gap-3 p-3">
+      <div className="grid grid-cols-[250px_1fr_220px] gap-2 p-2">
         <LeftSidebar
           rover={mockTelemetry.rover}
           crew={mockTelemetry.crew}
