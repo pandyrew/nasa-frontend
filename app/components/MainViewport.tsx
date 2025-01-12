@@ -50,7 +50,7 @@ function MissionStatus({
 }) {
   return (
     <div className="p-4 border-b border-gray-700">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-2">
         <div className="flex items-center gap-2">
           <span>Connection:</span>
           <span className="text-green-400 bg-green-400/10 px-2 py-0.5 rounded">
@@ -75,15 +75,15 @@ function MissionStatus({
 
       <div className="grid grid-cols-3 text-center">
         <div>
-          <div className="text-gray-400 mb-2">Current time</div>
+          <div className="text-gray-400">Current time</div>
           <div className="text-3xl">{currentTime}</div>
         </div>
         <div>
-          <div className="text-gray-400 mb-2">Elapsed time</div>
+          <div className="text-gray-400">Elapsed time</div>
           <div className="text-3xl">{elapsedTime}</div>
         </div>
         <div>
-          <div className="text-gray-400 mb-2">Mission progress</div>
+          <div className="text-gray-400">Mission progress</div>
           <div className="text-3xl">{missionProgress}%</div>
         </div>
       </div>
