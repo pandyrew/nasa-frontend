@@ -91,7 +91,7 @@ function TaskItem({ label, duration, risk, status }: Task) {
   return (
     <div className="relative flex gap-4">
       <div
-        className={`w-6 h-6 rounded-full ${styles.circle} flex items-center justify-center flex-shrink-0`}
+        className={`w-5 h-5 rounded-full ${styles.circle} flex items-center justify-center flex-shrink-0`}
       >
         {status === "complete" && (
           <div className="w-2 h-2 bg-gray-300 rounded-full" />

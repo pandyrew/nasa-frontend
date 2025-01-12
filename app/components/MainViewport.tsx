@@ -1,5 +1,9 @@
 type ViewMode = "single" | "grid";
 
+import radio from "/public/icons/radio.svg";
+import nav from "/public/icons/nav.svg";
+import speed from "/public/icons/speed.svg";
+
 export function MainViewport({
   connection,
   currentTime,
@@ -62,7 +66,7 @@ function MissionStatus({
             className="flex items-center gap-1 px-3 py-1 rounded hover:bg-gray-700"
             onClick={() => onViewModeChange("single")}
           >
-            <span className="text-xl">⊞</span> Single view
+            <span className="text-xl ">⊞</span> Single view
           </button>
           <button
             className="flex items-center gap-1 px-3 py-1 rounded hover:bg-gray-700"
@@ -172,14 +176,14 @@ function ManualControl() {
         <button className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">
           ⚠ Abort commands
         </button>
-        <button className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600">
-          🎙 Turn on radio
+        <button className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 flex items-center gap-2">
+          <img src={radio} alt="Radio" className="w-4 h-4" /> Turn on radio
         </button>
-        <button className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600">
-          🗺 Navigation
+        <button className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 flex items-center gap-2">
+          <img src={nav} alt="Navigation" className="w-4 h-4" /> Navigation
         </button>
-        <button className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600">
-          ⚡ Adjust speed
+        <button className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 flex items-center gap-2">
+          <img src={speed} alt="Speed" className="w-4 h-4" /> Adjust speed
         </button>
       </div>
     </div>
