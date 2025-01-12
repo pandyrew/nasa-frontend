@@ -44,7 +44,17 @@ const mockTelemetry = {
     humidity: 2,
     visibility: 12,
     windSpeed: 3
-  }
+  },
+  samples: [
+  {
+    id: "08123",
+    properties: ["Fine-grained", "low silica", "glassy"]
+  },
+  {
+    id: "32412",
+      properties: ["Coarse-grained", "high silica"]
+    }
+  ]
 };
 
 export default function Index() {
@@ -58,6 +68,7 @@ export default function Index() {
         <LeftSidebar 
           rover={mockTelemetry.rover}
           crew={mockTelemetry.crew}
+          samples={mockTelemetry.samples}
         />
         
         <MainViewport 

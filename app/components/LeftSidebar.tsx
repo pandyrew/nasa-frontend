@@ -12,15 +12,22 @@ type RoverStats = {
   temperature: number;
 };
 
+type ScienceSample = {
+  id: string;
+  properties: string[];
+};
+
 export function LeftSidebar({ 
   rover,
-  crew 
+  crew,
+  samples
 }: { 
   rover: RoverStats;
   crew: {
     ev1: CrewMember;
     ev2: CrewMember;
-  }
+  };
+  samples: ScienceSample[];
 }) {
   return (
     <div className="space-y-4">
@@ -53,6 +60,26 @@ export function LeftSidebar({
         <div className="space-y-4">
           <CrewStatus label="EV1" stats={crew.ev1} />
           <CrewStatus label="EV2" stats={crew.ev2} />
+        </div>
+      </div>
+
+      <div className="bg-gray-800 p-4 rounded-lg">
+        <h2 className="font-bold mb-4">Science</h2>
+        <div className="space-y-2">
+          {samples.map((sample) => (
+            <div 
+              key={sample.id}
+              className="p-3 bg-gray-700 rounded flex items-center space-x-3"
+            >
+              <div className="w-2 h-2 bg-blue-400 rounded-full" />
+              <div>
+                <div className="font-medium">Sample {sample.id}</div>
+                <div className="text-sm text-gray-400">
+                  {sample.properties.join(', ')}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
