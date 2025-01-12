@@ -40,6 +40,7 @@ const mockTelemetry = {
   },
   environmentalReadings: {
     temperature: 84,
+    rain: 0,
     humidity: 2,
     visibility: 12,
     windSpeed: 3
