@@ -15,7 +15,7 @@ export function StatusBar({
   };
 }) {
   return (
-    <div className="flex items-center justify-between p-2 bg-[#2d2a2b]">
+    <div className="flex items-center justify-between p-2 bg-[#2d2a2b] border-b border-gray-700">
       <div className="flex items-center gap-4 px-2">
         <span className="text-sm">Rover camera feed</span>
         <span className="text-red-500 text-sm">● Live</span>
