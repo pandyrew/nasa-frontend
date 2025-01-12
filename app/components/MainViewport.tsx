@@ -3,6 +3,8 @@ type ViewMode = "single" | "grid";
 import radio from "/public/icons/radio.svg";
 import nav from "/public/icons/nav.svg";
 import speed from "/public/icons/speed.svg";
+import expand from "/public/icons/expand.svg";
+import grid from "/public/icons/grid.svg";
 
 export function MainViewport({
   connection,
@@ -54,25 +56,25 @@ function MissionStatus({
 }) {
   return (
     <div className="p-2 px-4 border-b border-gray-700">
-      <div className="flex justify-between items-center mb-2">
-        <div className="flex items-center gap-2 text-sm">
+      <div className="flex justify-between items-center mb-2 border-b border-gray-700 pb-2">
+        <div className="flex items-center gap-2 text-xs">
           <span>Connection:</span>
           <span className="text-green-400 bg-green-400/10 px-2 py-0.5 rounded">
             {connection}
           </span>
         </div>
-        <div className="flex gap-2 text-sm">
+        <div className="flex gap-2 text-xs">
           <button
-            className="flex items-center gap-1 px-3 py-1 rounded hover:bg-gray-700"
+            className="flex items-center gap-1 px-3 py-2 rounded hover:bg-gray-700"
             onClick={() => onViewModeChange("single")}
           >
-            <span className="text-xl ">⊞</span> Single view
+            <img src={expand} alt="Expand" className="w-4 h-4" /> Single view
           </button>
           <button
             className="flex items-center gap-1 px-3 py-1 rounded hover:bg-gray-700"
             onClick={() => onViewModeChange("grid")}
           >
-            <span className="text-xl">⊞</span> Grid view
+            <img src={grid} alt="Grid" className="w-4 h-4" /> Grid view
           </button>
         </div>
       </div>

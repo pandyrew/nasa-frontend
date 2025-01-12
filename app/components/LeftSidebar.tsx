@@ -30,7 +30,7 @@ export function LeftSidebar({
   samples: ScienceSample[];
 }) {
   return (
-    <div className="space-y-3">
+    <div className="space-y-2">
       <div className="bg-[#2d2a2b] border border-gray-700 p-4 rounded-lg">
         <h2 className="font-bold text-sm">LTV</h2>
         <div className="space-y-4">
