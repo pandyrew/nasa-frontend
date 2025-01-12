@@ -16,8 +16,8 @@ export function MainViewport({
   onViewModeChange: (mode: ViewMode) => void;
 }) {
   return (
-    <div className="space-y-4 h-full">
-      <div className="bg-[#2d2a2b] border border-gray-700 rounded-lg h-full flex flex-col justify-between">
+    <div className="space-y-4 h-fit">
+      <div className="bg-[#2d2a2b] border border-gray-700 rounded-lg h-full flex flex-col ">
         <MissionStatus
           connection={connection}
           currentTime={currentTime}
@@ -94,7 +94,7 @@ function MissionStatus({
 function CameraFeed() {
   return (
     <div className="border-b border-gray-700">
-      <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
+      <div className="relative aspect-video bg-black overflow-hidden">
         {/* Time and Progress Bar */}
         <div className="absolute top-4 left-4 flex flex-col gap-2">
           <div className="text-xl">12:34:35 AM</div>
