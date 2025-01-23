@@ -5,6 +5,9 @@ import nav from "/public/icons/nav.svg";
 import speed from "/public/icons/speed.svg";
 import expand from "/public/icons/expand.svg";
 import grid from "/public/icons/grid.svg";
+import battery from "/public/icons/battery.svg";
+import termometer from "/public/icons/termometer.svg";
+import heart from "/public/icons/heart.svg";
 
 export function MainViewport({
   connection,
@@ -152,18 +155,118 @@ function CameraFeed() {
         </div>
 
         {/* Status Indicators */}
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 space-y-2">
-          {["O₂", "❤️", "🌡️", "🔋"].map((icon, i) => (
-            <div
-              key={i}
-              className="w-16 h-16 bg-gray-800/80 rounded-lg flex items-center justify-center"
-            >
-              <div className="text-center">
-                <div>{icon}</div>
-                <div>84%</div>
-              </div>
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 space-y-2 bg-gray-900/80 p-2 rounded-lg">
+          {/* Oxygen Level */}
+          <div className="w-[64px] h-[64px] relative">
+            <svg className="w-full h-full -rotate-90">
+              <circle
+                cx="32"
+                cy="32"
+                r="28"
+                stroke="#374151"
+                strokeWidth="4"
+                fill="none"
+              />
+              <circle
+                cx="32"
+                cy="32"
+                r="28"
+                stroke="white"
+                strokeWidth="4"
+                fill="none"
+                strokeDasharray="175.93"
+                strokeDashoffset="28.15"
+              />
+            </svg>
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <div className="text-xs">O₂</div>
+              <div className="text-xs">84%</div>
             </div>
-          ))}
+          </div>
+
+          {/* Heart Rate */}
+          <div className="w-[64px] h-[64px] relative">
+            <svg className="w-full h-full -rotate-90">
+              <circle
+                cx="32"
+                cy="32"
+                r="28"
+                stroke="#374151"
+                strokeWidth="4"
+                fill="none"
+              />
+              <circle
+                cx="32"
+                cy="32"
+                r="28"
+                stroke="white"
+                strokeWidth="4"
+                fill="none"
+                strokeDasharray="175.93"
+                strokeDashoffset="28.15"
+              />
+            </svg>
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <img src={heart} alt="" className="w-4 h-4" />
+              <div className="text-xs">84 bpm</div>
+            </div>
+          </div>
+
+          {/* Temperature */}
+          <div className="w-[64px] h-[64px] relative">
+            <svg className="w-full h-full -rotate-90">
+              <circle
+                cx="32"
+                cy="32"
+                r="28"
+                stroke="#374151"
+                strokeWidth="4"
+                fill="none"
+              />
+              <circle
+                cx="32"
+                cy="32"
+                r="28"
+                stroke="#EF4444"
+                strokeWidth="4"
+                fill="none"
+                strokeDasharray="175.93"
+                strokeDashoffset="28.15"
+              />
+            </svg>
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <img src={termometer} alt="" className="w-4 h-4" />
+              <div className="text-xs">84°C</div>
+            </div>
+          </div>
+
+          {/* Battery Level */}
+          <div className="w-[64px] h-[64px] relative">
+            <svg className="w-full h-full -rotate-90">
+              <circle
+                cx="32"
+                cy="32"
+                r="28"
+                stroke="#374151"
+                strokeWidth="4"
+                fill="none"
+              />
+              <circle
+                cx="32"
+                cy="32"
+                r="28"
+                stroke="#EAB308"
+                strokeWidth="4"
+                fill="none"
+                strokeDasharray="175.93"
+                strokeDashoffset="28.15"
+              />
+            </svg>
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <img src={battery} alt="" className="w-4 h-4" />
+              <div className="text-xs">84%</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
